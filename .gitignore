@@ -1,0 +1,4 @@
+*.idea
+*.sqlite3
+*pyc
+mole_media
