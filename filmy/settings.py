@@ -3,16 +3,13 @@ from pathlib import Path
 from decouple import config
 import os
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['movie-rater-tutorial-yan.herokuapp.com', 'localhost:8000']
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,7 +54,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'filmy.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl),}
+DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -74,7 +71,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -86,13 +82,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'moje_static')
 STATICFILES_DIRS = ['moje_static']
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'mole_media'
